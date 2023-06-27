@@ -1,1 +1,40 @@
-哈哈哈
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<div id="all">
+		<div class="timetext">
+			<div>观河著交房倒计时</div>
+			<div>交付时间：2024年9月30日</div>
+			<div>目前距离交房还有</div>
+			<div>
+				<span id="t_d"></span>
+				<span id="t_h"></span>
+				<span id="t_m"></span>
+				<span id="t_s"></span>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		function getRTime() {
+			var EndTime = new Date("2024/09/30 00:00:00"); //截止时间
+			var NowTime = new Date();
+			var t = EndTime.getTime() - NowTime.getTime();
+			var d = Math.floor(t / 1000 / 60 / 60 / 24);
+			var h = Math.floor(t / 1000 / 60 / 60 % 24);
+			var m = Math.floor(t / 1000 / 60 % 60);
+			var s = Math.floor(t / 1000 % 60);
+			document.getElementById("t_d").innerHTML = d + " 天";
+			document.getElementById("t_h").innerHTML = h + " 时";
+			document.getElementById("t_m").innerHTML = m + " 分";
+			document.getElementById("t_s").innerHTML = s + " 秒";
+		}
+		setInterval(getRTime, 0);
+	</script>
+</body>
+</html>
