@@ -22,7 +22,7 @@
 </head>
 <body>
 	<div id="all">
-		<div class="timetext" style="font-size:28px;text-align:center;color: #ff0000;">
+		<div class="timetext" style="font-size:48px;text-align:center;color: #ff0000;">
 			<div>观河著交房倒计时</div>
 			<div>交付时间：2024年9月30日</div>
 			<div>目前距离交房还有</div>
@@ -32,6 +32,7 @@
 				<span id="t_m"></span>
 				<span id="t_s"></span>
 			</div>
+			<div>已经延期交付<span style="font-size:88px;text-align:center;color: #ff0000;" id="t_d1"></span></div>
 		</div>
 	</div>
 	<center>本站总访问量<span id="busuanzi_value_site_pv"></span>次</center>
@@ -63,6 +64,7 @@
 			document.getElementById("t_h").innerHTML = h + " 时";
 			document.getElementById("t_m").innerHTML = m + " 分";
 			document.getElementById("t_s").innerHTML = s + " 秒";
+			document.getElementById("t_d1").innerHTML = Math.abs(d) + " 天";
 		}
 		setInterval(getRTime, 0);
 	</script>
