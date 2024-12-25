@@ -1,52 +1,159 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>观河著H5</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/viewer.min.css">
 	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/viewer-jquery.min.js"></script>
-	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-	<style>
-		body {
-			height: 100%;
-			width: 100%;
-			background:url('imgs/background.png') no-repeat center 0px;
-			background-position: center 0px;
-			background-size: cover;
-		}
-		* { margin: 0; padding: 0;}
-	</style>
+    <style>
+        /* 重置默认样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+
+        /* 创建一个响应式的导航栏 */
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+        }
+
+        .navbar a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        /* 主页内容 */
+        .main-content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .main-content h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .main-content p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+		.main-content div {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+        /* 按钮样式 */
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* 图像响应式 */
+        .responsive-img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        /* 简单的底部 */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* 媒体查询，适应不同屏幕 */
+        @media (max-width: 600px) {
+            .navbar {
+                padding: 10px;
+            }
+
+            .main-content h1 {
+                font-size: 1.5em;
+            }
+
+            .main-content p {
+                font-size: 1em;
+            }
+
+            .btn {
+                font-size: 1em;
+                padding: 8px 16px;
+            }
+        }
+    </style>
 </head>
 <body>
-	<div id="all">
-		<div class="timetext" style="font-size:48px;text-align:center;color: #ff0000;">
-			<div>观河著交房倒计时</div>
-			<div>交付时间：2024年9月30日</div>
-			<div>目前距离交房还有</div>
-			<div>
-				<span id="t_d"></span>
-				<span id="t_h"></span>
-				<span id="t_m"></span>
-				<span id="t_s"></span>
-			</div>
-			<div>已经延期交付<span style="font-size:88px;text-align:center;color: #ff0000;" id="t_d1"></span></div>
-		</div>
-	</div>
-	<center>本站总访问量<span id="busuanzi_value_site_pv"></span>次</center>
-	<!--<div>
-		<ul id="hxt">
-			<li><h4>户型图点击预览</h4></li>
-			<li><img data-original="imgs/high_a.jpg" src="imgs/thumbnails/high_a.png" alt="高层户型图A"></li>
-			<li><img data-original="imgs/high_b.jpg" src="imgs/thumbnails/high_a.png" alt="高层户型图B"></li>
-			<li><img data-original="imgs/villa_a.jpg" src="imgs/thumbnails/high_a.png" alt="洋房户型图A"></li>
-			<li><img data-original="imgs/villa_b.jpg" src="imgs/thumbnails/high_a.png" alt="洋房户型图B"></li>
-		</ul>
-	</div> -->
 
+    <!-- 导航栏 -->
+    <div class="navbar">
+        <a href="#home">首页</a>
+        <a href="#about">关于</a>
+        <a href="#contact">联系</a>
+    </div>
+
+    <!-- 主内容 -->
+    <div class="main-content">
+		<h1>观河著交房倒计时</h1>
+		<h1>交付时间：2024年9月30日</h1>
+		<h1>目前距离交房还有</h1>
+		<div style="">
+			<span id="t_d"></span>
+			<span id="t_h"></span>
+			<span id="t_m"></span>
+			<span id="t_s"></span>
+		</div>
+		<div style="">已经延期交付<span style="font-size:88px;text-align:center;color: #ff0000;" id="t_d1"></span>天</div>
+		
+		<img class="responsive-img" src="imgs/background.png" alt="示例图片">
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer">
+        <p>© 2024 RongZeYuan</p>
+    </div>
+
+    <!-- JavaScript 代码 -->
 	<script type="text/javascript">
+	    // 页面加载时的欢迎提示
+        window.onload = function() {
+            
+        };
 		$(function() {
 			$('#hxt').viewer({
 				url: 'data-original',
@@ -64,9 +171,10 @@
 			document.getElementById("t_h").innerHTML = h + " 时";
 			document.getElementById("t_m").innerHTML = m + " 分";
 			document.getElementById("t_s").innerHTML = s + " 秒";
-			document.getElementById("t_d1").innerHTML = Math.abs(d) + " 天";
+			document.getElementById("t_d1").innerHTML = Math.abs(d);
 		}
 		setInterval(getRTime, 0);
 	</script>
+    
 </body>
 </html>
